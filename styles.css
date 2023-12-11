@@ -1,0 +1,133 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom, #99c2a2, #99c2a2);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+label {
+      font-weight: bold;
+    }
+
+form {
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+  background-color: #F8F8F8;
+}
+
+input[type="text"],
+textarea {
+  width: calc(100% - 20px);
+}
+
+
+#agreeCheckbox {
+  margin-bottom: 20px; /* Добавим отступ снизу */
+
+}
+
+#modal button {
+  padding: 10px;
+  margin: 0 5px 0 0;
+  border-radius: 50px;
+  border: none;
+  background-color: #5B8E7D; /* Используйте цвет кнопки отмена */
+  color: white;
+  outline: 2px solid #1a4341;
+  cursor: pointer;
+}
+
+#modalContent {
+  max-height: 250px; /* Настройте максимальную высоту по вашему желанию */
+  overflow-y: auto; /* Добавляет вертикальную полосу прокрутки при необходимости */
+}
+
+
+
+button[type="submit"],
+button[type="reset"] {
+  padding: 10px;
+  margin: 0 5px 0 0;
+  border-radius: 50px;
+  border: none;
+  background-color: #5B8E7D;
+  color: white;
+  outline: 2px solid #1a4341;
+}
+
+
+button[type="button"]
+{
+  padding: 10px;
+  margin: 0 5px 0 0;
+  border-radius: 50px;
+  border: none;
+  background-color: #ff0000;
+  color: white;
+  outline: 2px solid #1a4341;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.buttons button {
+  flex: 1;
+}
+
+#error {
+  color: red;
+  margin-top: 10px;
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#modal > div {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+}
+
+#closeModal {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #5B8E7D;
+    color: white;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+}
