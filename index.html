@@ -1,396 +1,291 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="scripts.js"></script>
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Форма ввода</title>
-<link href="styles.css" rel="stylesheet" type="text/css"/>
+<link href="styles_fl.css" rel="stylesheet" type="text/css"/>
 <style>
     .error {
       border: 2px solid red;
     }
-  </style>
+</style>
 <!-- Include flatpickr CSS -->
 <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet"/>
 </head>
 <body>
 <form data-content-type="web_app_data" enctype="multipart/form-data">
-<div>
-<label for="city">Город</label>
-<select id="city" name="city">
-<option selected=""></option>
-</select>
-</div>
-<div>
-<label for="district">Район</label>
-<select id="district" name="district">
-<option selected="" value="ЦАО"></option>
-</select>
-</div>
-<div>
-<label for="street">Улица</label>
-<input id="street" name="street" placeholder="Улица" type="text"/>
-</div>
-<div>
-<label for="house">Дом</label>
-<input id="house" name="house" placeholder="Дом" type="text"/>
-</div>
-<div>
-<label for="building">Корпус</label>
-<input id="building" name="building" placeholder="Корпус" type="text"/>
-</div>
-<div>
-<label for="apartment">Квартира</label>
-<input id="apartment" name="apartment" placeholder="Квартира" type="text"/>
-</div>
-<div>
-<label for="entrance">Подъезд</label>
-<input id="entrance" name="entrance" placeholder="Подъезд" type="text"/>
-</div>
-<div>
-<label for="floor">Этаж</label>
-<input id="floor" name="floor" placeholder="Этаж" type="text"/>
-</div>
-<div>
-<label for="intercomCode">Код домофона</label>
-<input id="intercomCode" name="intercomCode" placeholder="Код домофона" type="text"/>
-</div>
-<div>
-<label for="hvsQuantity">Количество ХВС</label>
-<select id="hvsQuantity" name="hvsQuantity">
-<option value="0">0</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-</select>
-</div>
-<div>
-<label for="gvsQuantity">Количество ГВС</label>
-<select id="gvsQuantity" name="gvsQuantity">
-<option value="0">0</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-</select>
-</div>
-<div>
-<label for="totalAmount">Сумма</label>
-<input id="totalAmount" name="totalAmount" placeholder="Сумма" type="text"/>
-</div>
-<div>
-<label for="phone">Телефон</label>
-<input id="phone" inputmode="numeric" name="phone" placeholder="Телефон" type="text" value="+7"/>
-</div>
-<div>
-<input id="copyPhoneCheckbox" name="copyPhoneCheckbox" type="checkbox"/>
-<label for="copyPhoneCheckbox">Телефоны совпадают</label>
-</div>
-<div>
-<label for="contactNumber">Номер телефона звонящего</label>
-<input id="contactNumber" inputmode="numeric" name="contactNumber" placeholder="Номер телефона звонящего" type="text" value="+7"/>
-</div>
-<div>
-<label for="workDate">Дата проведения работ</label>
-<input id="workDate" name="workDate" placeholder="Дата проведения работ" readonly="" type="text"/>
-</div>
-<div>
-<label for="workInterval">Временной интервал работ</label>
-<select id="workInterval" name="workInterval">
-<option value="8:00 - 13:00">8:00 - 13:00</option>
-<option value="13:00 - 18:00">13:00 - 18:00</option>
-</select>
-</div>
-<div>
-<label for="notes">Примечания</label>
-<textarea id="notes" name="notes" placeholder="Примечания"></textarea>
-</div>
-<div id="error"></div>
-<input id="agreeCheckbox" type="checkbox"/><label for="agreeCheckbox"> Все поля заполнены верно!</label>
-<div class="button-group">
-<button disabled="disabled" id="submit" type="submit">Создать заявку</button>
-<button id="checkButton" type="button">Проверить</button>
-<button id="reset" style="margin-left: 10px" type="reset">Отмена</button>
-</div>
-</form>
+
+        <label for="f_fl">!Фамилия:</label>
+        <input type="text" id="f_fl" name="f_fl" required pattern="[а-яА-ЯёЁa-zA-Z]+" placeholder="Введите фамилию">
+        <br>
+
+        <label for="i_fl">Имя:</label>
+        <input type="text" id="i_fl" name="i_fl" required pattern="[а-яА-ЯёЁa-zA-Z]+" placeholder="Введите имя">
+        <br>
+
+        <label for="o_fl">Отчество:</label>
+        <input type="text" id="o_fl" name="o_fl" required pattern="[а-яА-ЯёЁa-zA-Z]+" placeholder="Введите отчество">
+        <br>
+
+        <label for="city_fl">Город:</label>
+        <input type="text" id="city_fl" name="city_fl" required pattern="[а-яА-ЯёЁa-zA-Z]+" placeholder="Введите город">
+        <br>
+
+        <label for="street_fl">Улица:</label>
+        <input type="text" id="street_fl" name="street_fl" required placeholder="Введите улицу">
+        <br>
+
+
+        <label for="house_fl">Номер дома:</label>
+        <input type="text" id="house_fl" name="room_fl" required pattern="[0-9а-яА-Яa-zA-Z]+" placeholder="Введите номер дома">
+        <br>
+
+
+
+        <label for="room_fl">Номер квартиры:</label>
+        <input type="text" id="room_fl" name="room_fl" required pattern="[0-9]+" placeholder="Если есть" value="0">
+        <br>
+
+
+        <label for="post_index_fl">Почтовый индекс:</label>
+        <input type="text" id="post_index_fl" name="post_index_fl" required pattern="[0-9]{6}" placeholder="6 цифр">
+        <br>
+
+        <label for="phone_fl">Телефон:</label>
+        <input type="text" id="phone_fl" name="phone_fl" required pattern="\+7[0-9]{10}" placeholder="Введите телефон в формате +7XXXXXXXXXX" value="+7">
+        <br>
+
+        <label for="email_fl">Email:</label>
+        <input type="text" id="email_fl" name="email_fl" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}" placeholder="Введите email">
+        <br>
+
+        <label for="pasport_serial_fl">Серия паспорта:</label>
+        <input type="text" id="pasport_serial_fl" name="pasport_serial_fl" required pattern="[0-9]{4}" placeholder="4 цифры">
+        <br>
+
+        <label for="pasport_number_fl">Номер паспорта:</label>
+        <input type="text" id="pasport_number_fl" name="pasport_number_fl" required pattern="[0-9]{6}" placeholder="6 цифр">
+        <br>
+
+        <label for="pasport_vudan_fl">Кем выдан:</label>
+        <input type="text" id="pasport_vudan_fl" name="pasport_vudan_fl" placeholder="Кем выдан?">
+        <br>
+
+        <label for="pasport_vudan_data_fl">Дата выдачи паспорта (дд.мм.гггг):</label>
+        <input type="text" id="pasport_vudan_data_fl" name="pasport_vudan_data_fl" placeholder="Введите дату в формате дд.мм.гггг">
+        <br>
+
+        <label for="inn_fl">ИНН:</label>
+        <input type="text" id="inn_fl" name="inn_fl" required pattern="[0-9]{12}" placeholder="12 цифр">
+        <br>
+
+
+        <label for="snils_fl">СНИЛС:</label>
+        <input type="text" id="snils_fl" name="snils_fl" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{3} [0-9]{2}" placeholder="11 цифр">
+        <br>
+
+        <label for="bank_fl">Название банка:</label>
+        <input type="text" id="bank_fl" name="bank_fl" required pattern="[0-9а-яА-Яa-zA-Z]+" placeholder="Введите название банка">
+        <br>
+
+        <label for="rs_fl">Расчетный счет:</label>
+        <input type="text" id="rs_fl" name="rs_fl" required pattern="408[0-9]{17}" placeholder="Введите расчетный счет (20 цифр)" value="408">
+        <br>
+
+        <label for="ks_fl">Корреспондентский счет:</label>
+        <input type="text" id="ks_fl" name="ks_fl" required pattern="30101[0-9]{15}" placeholder="20 цифр начиная с 30101" value="30101">
+        <br>
+
+
+        <label for="bik_fl">БИК:</label>
+<input type="text" id="bik_fl" name="bik_fl" required pattern="04[0-9]{7}" placeholder="9 цифр" value="04">
+<br>
+
+
+
+        <button id="submit" type="submit">Создать заявку</button>
+        <button type="button" id="cancel-button">Отмена</button>
+
+    </form>
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
 <script>
+document.addEventListener("DOMContentLoaded", function () {
   let tg = window.Telegram.WebApp;
-  let submit = document.getElementById("submit");
-  let reset = document.getElementById("reset");
-  let phoneInput = document.getElementById("phone");
-  let contactNumberInput = document.getElementById("contactNumber");
-  let copyPhoneCheckbox = document.getElementById("copyPhoneCheckbox");
-  let citySelect = document.getElementById("city");
-  let districtSelect = document.getElementById("district");
-  let otherModelInput = document.getElementById("other_model");
-  copyPhoneCheckbox.addEventListener("change", function() {
-    if (copyPhoneCheckbox.checked) {
-      contactNumberInput.value = phoneInput.value;
-    } else {
-      contactNumberInput.value = "";
-    }
-  });
-  function loadJSONFile(file, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.overrideMimeType('application/json');
-    xhr.open('GET', file, true);
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        callback(xhr.responseText);
-      }
-    };
-    xhr.send(null);
-  }
-  function loadCities() {
-    loadJSONFile('all_city.json', function (response) {
-      var cities = JSON.parse(response);
-      cities.forEach(function (city) {
-        var option = document.createElement('option');
-        option.value = city.city;
-        option.textContent = city.city;
-        citySelect.appendChild(option);
-      });
-    });
-  }
-  function loadDistricts() {
-    citySelect.addEventListener('change', function () {
-      var selectedCity = citySelect.value;
-      districtSelect.innerHTML = '';
-      loadJSONFile('all_city.json', function (response) {
-        var cities = JSON.parse(response);
-        var selectedCityData = cities.find(function (city) {
-          return city.city === selectedCity;
-        });
-        if (selectedCityData && selectedCityData.raion) {
-          selectedCityData.raion.forEach(function (raion) {
-            var option = document.createElement('option');
-            option.value = raion;
-            option.textContent = raion;
-            districtSelect.appendChild(option);
-          });
-        }
-      });
-    });
-  }
-  loadCities();
-  loadDistricts();
-  // Получение завтрашней даты
-  // let tomorrow = new Date();
-  // tomorrow.setDate(tomorrow.getDate() + 1);
-  // Получаем сегодняшнюю дату
-  let today = new Date();
-  // Configure flatpickr date picker with Russian locale
-  flatpickr("#workDate", {
-    dateFormat: "d.m.Y",
-    defaultDate: today,   // Сегодняшняя дата будет предустановлена
-    minDate: today,       // Сегодняшняя дата будет минимальной датой для выбора
 
-    // defaultDate: tomorrow,
-    // defaultDate: tomorrow, // Завтрашняя дата будет предустановлена
-    // minDate: tomorrow,   //Раскоментить если надо будет выбирать только завтрашнюю дату  // Завтрашняя дата будет минимальной датой для выбора
-    locale: "ru"
-  });
-  submit.addEventListener("click", (event) => {
-    event.preventDefault();
-    let hvsQuantity = document.getElementById("hvsQuantity");
-    let gvsQuantity = document.getElementById("gvsQuantity");
-    let totalAmount = document.getElementById("totalAmount");
-    let phone = document.getElementById("phone");
-    let contactNumber = document.getElementById("contactNumber");
-    let city = document.getElementById("city");
-    let district = document.getElementById("district");
-    let street = document.getElementById("street");
-    let house = document.getElementById("house");
-    let building = document.getElementById("building");
-    let apartment = document.getElementById("apartment");
-    let entrance = document.getElementById("entrance");
-    let floor = document.getElementById("floor");
-    let intercomCode = document.getElementById("intercomCode");
-    let workDate = document.getElementById("workDate");
-    let workInterval = document.getElementById("workInterval");
-    let notes = document.getElementById("notes");
-    let error = document.getElementById("error");
-    error.innerText = "";
-    let invalidFields = [];
+  // Получение кнопки отправки формы
+  let submitButton = document.getElementById("submit");
+  let form = document.querySelector("form"); // Добавьте селектор вашей формы, если у нее нет id
 
-    // Проверка на наличие нецифровых символов в поле номера дома
-    if (house.value.trim() === "" || /\D/.test(house.value)) {
-      house.classList.add("error");
-      invalidFields.push("Номер дома должен содержать только цифры");
-    } else {
-      house.classList.remove("error");
-    }
+  submitButton.addEventListener("click", function (event) {
+    event.preventDefault(); // Предотвратите стандартное поведение формы
 
-    if (totalAmount.value.trim() === "") {
-      totalAmount.classList.add("error");
-      invalidFields.push("Сумма");
+    // Проверяем, валидна ли форма
+    if (form.checkValidity()) {
+      // Собираем данные из полей формы
+      let data = {
+          action: "register", // Добавляем поле action
+        f_fl: document.getElementById("f_fl").value,
+        i_fl: document.getElementById("i_fl").value,
+        o_fl: document.getElementById("o_fl").value,
+        city_fl: document.getElementById("city_fl").value,
+        street_fl: document.getElementById("street_fl").value,
+        house_fl: document.getElementById("house_fl").value,
+        room_fl: document.getElementById("room_fl").value,
+        post_index_fl: document.getElementById("post_index_fl").value,
+        phone_fl: document.getElementById("phone_fl").value,
+        email_fl: document.getElementById("email_fl").value,
+        pasport_serial_fl: document.getElementById("pasport_serial_fl").value,
+        pasport_number_fl: document.getElementById("pasport_number_fl").value,
+        pasport_vudan_fl: document.getElementById("pasport_vudan_fl").value,
+        pasport_vudan_data_fl: document.getElementById("pasport_vudan_data_fl").value,
+        inn_fl: document.getElementById("inn_fl").value,
+        snils_fl: document.getElementById("snils_fl").value,
+        bank_fl: document.getElementById("bank_fl").value,
+        rs_fl: document.getElementById("rs_fl").value,
+        ks_fl: document.getElementById("ks_fl").value,
+        bik_fl: document.getElementById("bik_fl").value,
+      };
+
+      // Отправляем данные в телеграм-бота
+      tg.sendData(JSON.stringify(data));
+
+      // Закрываем окно
+      tg.close();
     } else {
-      totalAmount.classList.remove("error");
-    }
-    if (phone.value.trim() === "" || !/^\+7\d{10}$/.test(phone.value)) {
-      phone.classList.add("error");
-      invalidFields.push("Телефон");
-    } else {
-      phone.classList.remove("error");
-    }
-    if (contactNumber.value.trim() === "" || !/^\+7\d{10}$/.test(contactNumber.value)) {
-      contactNumber.classList.add("error");
-      invalidFields.push("Номер телефона звонящего");
-    } else {
-      contactNumber.classList.remove("error");
-    }
-    if (city.value.trim() === "") {
-      city.classList.add("error");
-      invalidFields.push("Город");
-    } else {
-      city.classList.remove("error");
-    }
-    if (district.value.trim() === "") {
-      district.classList.add("error");
-      invalidFields.push("Район");
-    } else {
-      district.classList.remove("error");
-    }
-    if (street.value.trim() === "") {
-      street.classList.add("error");
-      invalidFields.push("Улица");
-    } else {
-      street.classList.remove("error");
-    }
-    if (house.value.trim() === "") {
-      house.classList.add("error");
-      invalidFields.push("Дом");
-    } else {
-      house.classList.remove("error");
-    }
-    if (invalidFields.length > 0) {
-      error.innerText = "Пожалуйста, правильно заполните следующие поля: " + invalidFields.join(", ");
-      return;
-    }
-    let data = {
-      action: "submit_application", // Добавляем поле action
-      hvsQuantity: hvsQuantity.value,
-      gvsQuantity: gvsQuantity.value,
-      totalAmount: totalAmount.value,
-      phone: phone.value,
-      contactNumber: contactNumber.value,
-      city: city.value,
-      district: district.value,
-      street: street.value,
-      house: house.value,
-      building: building.value,
-      apartment: apartment.value,
-      entrance: entrance.value,
-      floor: floor.value,
-      intercomCode: intercomCode.value,
-      workDate: workDate.value,
-      workInterval: workInterval.value,
-      notes: notes.value
-    };
-    // Send data to Telegram
-    tg.sendData(JSON.stringify(data));
-    // Close the window
-    tg.close();
-  });
-  reset.addEventListener("click", () => {
-    // Actions when "Cancel" button is clicked
-    tg.close();
-  });
-  document.addEventListener("DOMContentLoaded", function() {
-  let inputFields = document.querySelectorAll("input, select, textarea");
-  for (let i = 0; i < inputFields.length; i++) {
-    let currentField = inputFields[i];
-    currentField.addEventListener("keydown", function(event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        let nextFieldIndex = i + 1;
-        if (nextFieldIndex < inputFields.length) {
-          let nextField = inputFields[nextFieldIndex];
-          nextField.focus();
-        }
-      }
-    });
-  }
-});
-document.addEventListener("DOMContentLoaded", function() {
-  let phoneInput = document.getElementById("phone");
-  let contactNumberInput = document.getElementById("contactNumber");
-  phoneInput.addEventListener("focus", function() {
-    if (phoneInput.value === "+7") {
-      setTimeout(function() {
-        phoneInput.setSelectionRange(2, 2);
-      }, 0);
-    }
-  });
-  contactNumberInput.addEventListener("focus", function() {
-    if (contactNumberInput.value === "+7") {
-      setTimeout(function() {
-        contactNumberInput.setSelectionRange(2, 2);
-      }, 0);
+      // Если форма невалидна, показываем ошибки
+      form.reportValidity();
     }
   });
 });
-</script>
-<div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
-<div style="background-color: white; padding: 20px; max-width: 500px; width: 80%;">
-<div id="modalContent"></div>
-<p>К приходу нашего специалиста подготовьте пожалуйста документы на счетчик(и) при их наличии.
-По выполнении работ специалист выдаст вам квитанцию и акт о поверке. Акт о поверке ваших счетчиков необходимо предоставить вашей управляющей компании (расчетный центр).</p>
-<button onclick="document.getElementById('modal').style.display = 'none'">Вернуться назад</button>
-</div>
-</div>
-<script>
-    document.getElementById('checkButton').addEventListener('click', function() {
-        var content = '';
-        content += 'Количество ХВС: ' + document.getElementById('hvsQuantity').value + '<br>';
-        content += 'Количество ГВС: ' + document.getElementById('gvsQuantity').value + '<br>';
-        content += 'Общая сумма: ' + document.getElementById('totalAmount').value + '<br>';
-        content += 'Телефон: ' + document.getElementById('phone').value + '<br>';
-        content += 'Номер контакта: ' + document.getElementById('contactNumber').value + '<br>';
-        content += 'Город: ' + document.getElementById('city').value + '<br>';
-        content += 'Район: ' + document.getElementById('district').value + '<br>';
-        content += 'Улица: ' + document.getElementById('street').value + '<br>';
-        content += 'Дом: ' + document.getElementById('house').value + '<br>';
-        content += 'Корпус: ' + document.getElementById('building').value + '<br>';
-        content += 'Квартира: ' + document.getElementById('apartment').value + '<br>';
-        content += 'Подъезд: ' + document.getElementById('entrance').value + '<br>';
-        content += 'Этаж: ' + document.getElementById('floor').value + '<br>';
-        content += 'Код домофона: ' + document.getElementById('intercomCode').value + '<br>';
-        content += 'Дата работы: ' + document.getElementById('workDate').value + '<br>';
-        content += 'Интервал работы: ' + document.getElementById('workInterval').value + '<br>';
-        content += 'Примечания: ' + document.getElementById('notes').value + '<br>';
 
-        document.getElementById('modalContent').innerHTML = content;
-        document.getElementById('modal').style.display = 'flex';
-    });
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
-    document.getElementById('agreeCheckbox').addEventListener('change', function() {
-        var btn = document.querySelector('button[disabled]');
-        if (this.checked) {
-            btn.removeAttribute('disabled');
-        } else {
-            btn.setAttribute('disabled', 'disabled');
-        }
-    });
+function restrictInput(inputElement, pattern, format) {
+  inputElement.addEventListener("input", function () {
+    var inputValue = this.value;
+
+    // Применяем регулярное выражение для ограничения ввода
+    var cleanedValue = inputValue.replace(pattern, '');
+
+    // Форматируем значение согласно заданному формату
+    var formattedValue = format(cleanedValue);
+
+    this.value = formattedValue;
+  });
+}
+
+// Форматирование ИНН (ограничение в 12 символов)
+restrictInput(document.getElementById("inn_fl"), /[^\d]/g, function (cleanedValue) {
+  return cleanedValue.slice(0, 12);
+});
+
+// Форматирование СНИЛС (добавление дефисов)
+restrictInput(document.getElementById("snils_fl"), /[^\d]/g, function (cleanedValue) {
+  var value = cleanedValue.slice(0, 11);
+  return value.slice(0, 3) + "-" + value.slice(3, 6) + "-" + value.slice(6, 9) + " " + value.slice(9, 11);
+});
+
+// Форматирование почтового индекса (ограничение в 6 символов)
+restrictInput(document.getElementById("post_index_fl"), /[^\d]/g, function (cleanedValue) {
+  return cleanedValue.slice(0, 6);
+});
+
+
+// Форматирование номера квартиры (оставляем буквы и цифры)
+restrictInput(document.getElementById("room_fl"), /[^a-zA-Z\d]/g, function (cleanedValue) {
+  return cleanedValue;
+});
+
+// Форматирование телефона (добавление "+7" и ограничение в 12 символов)
+restrictInput(document.getElementById("phone_fl"), /[^\d\+]/g, function (cleanedValue) {
+  if (!cleanedValue.startsWith("+7")) {
+    cleanedValue = "+7" + cleanedValue;
+  }
+  return cleanedValue.slice(0, 12);
+});
+
+// Форматирование серии паспорта (ограничение в 4 символа)
+restrictInput(document.getElementById("pasport_serial_fl"), /[^\d]/g, function (cleanedValue) {
+  return cleanedValue.slice(0, 4);
+});
+
+// Форматирование номера паспорта (ограничение в 6 символов)
+restrictInput(document.getElementById("pasport_number_fl"), /[^\d]/g, function (cleanedValue) {
+  return cleanedValue.slice(0, 6);
+});
+
+// Форматирование расчетного счета (добавление "408" и ограничение в 20 символов)
+restrictInput(document.getElementById("rs_fl"), /[^\d]/g, function (cleanedValue) {
+  if (!cleanedValue.startsWith("408")) {
+    cleanedValue = "408" + cleanedValue;
+  }
+  return cleanedValue.slice(0, 20);
+});
+
+// Форматирование корреспондентского счета (добавление "30101" и ограничение в 20 символов)
+restrictInput(document.getElementById("ks_fl"), /[^\d]/g, function (cleanedValue) {
+  if (!cleanedValue.startsWith("30101")) {
+    cleanedValue = "30101" + cleanedValue;
+  }
+  return cleanedValue.slice(0, 20);
+});
+
+// Форматирование БИК (добавление "04" и ограничение в 9 символов)
+restrictInput(document.getElementById("bik_fl"), /[^\d]/g, function (cleanedValue) {
+  if (!cleanedValue.startsWith("04")) {
+    cleanedValue = "04" + cleanedValue;
+  }
+  return cleanedValue.slice(0, 9);
+});
+
+// Форматирование даты (добавление точек и ограничение в "дд.мм.гггг")
+restrictInput(document.getElementById("pasport_vudan_data_fl"), /[^\d]/g, function (cleanedValue) {
+  cleanedValue = cleanedValue.slice(0, 8);
+  if (cleanedValue.length >= 2) {
+    cleanedValue = cleanedValue.slice(0, 2) + '.' + cleanedValue.slice(2);
+  }
+  if (cleanedValue.length >= 5) {
+    cleanedValue = cleanedValue.slice(0, 5) + '.' + cleanedValue.slice(5);
+  }
+  return cleanedValue;
+});
+
+
+
+var emailInput = document.getElementById("email_fl");
+
+emailInput.addEventListener("input", function () {
+  var inputValue = this.value;
+
+  // Проверяем, содержит ли введенное значение русские буквы
+  var hasRussianLetters = /[а-яА-ЯёЁ]/.test(inputValue);
+
+  if (hasRussianLetters) {
+    // Если есть русские буквы, очищаем поле
+    this.value = this.value.replace(/[а-яА-ЯёЁ]/g, '');
+  }
+});
+
 </script>
 </body>
 </html>
