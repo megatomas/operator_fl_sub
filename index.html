@@ -36,6 +36,18 @@
 <input id="apartment" name="apartment" placeholder="Квартира" type="text"/>
 </div>
 <div>
+<label for="entrance">Подъезд</label>
+<input id="entrance" name="entrance" placeholder="Подъезд" type="text"/>
+</div>
+<div>
+<label for="floor">Этаж</label>
+<input id="floor" name="floor" placeholder="Этаж" type="text"/>
+</div>
+<div>
+<label for="intercomCode">Код домофона</label>
+<input id="intercomCode" name="intercomCode" placeholder="Код домофона" type="text"/>
+</div>
+<div>
 <label for="hvsQuantity">Количество ХВС</label>
 <select id="hvsQuantity" name="hvsQuantity">
 <option value="0">0</option>
@@ -90,22 +102,8 @@
 <div>
 <label for="workInterval">Временной интервал работ</label>
 <select id="workInterval" name="workInterval">
-<option value="7:00">7:00</option>
-<option value="8:00">8:00</option>
-<option value="9:00">9:00</option>
-<option value="10:00">10:00</option>
-<option value="11:00">11:00</option>
-<option value="12:00">12:00</option>
-<option value="13:00">13:00</option>
-<option value="14:00">14:00</option>
-<option value="15:00">15:00</option>
-<option value="16:00">16:00</option>
-<option value="17:00">17:00</option>
-<option value="18:00">18:00</option>
-<option value="19:00">19:00</option>
-<option value="20:00">20:00</option>
-<option value="21:00">21:00</option>
-<option value="22:00">22:00</option>
+<option value="8:00 - 13:00">8:00 - 13:00</option>
+<option value="13:00 - 18:00">13:00 - 18:00</option>
 </select>
 </div>
 <div>
@@ -192,6 +190,9 @@
     let street = document.getElementById("street");
     let house = document.getElementById("house");
     let apartment = document.getElementById("apartment");
+    let entrance = document.getElementById("entrance");
+    let floor = document.getElementById("floor");
+    let intercomCode = document.getElementById("intercomCode");
     let workDate = document.getElementById("workDate");
     let workInterval = document.getElementById("workInterval");
     let notes = document.getElementById("notes");
@@ -247,8 +248,6 @@
       error.innerText = "Пожалуйста, правильно заполните следующие поля: " + invalidFields.join(", ");
       return;
     }
-});
-
     let data = {
       action: "submit_application", // Добавляем поле action
       hvsQuantity: hvsQuantity.value,
@@ -260,6 +259,9 @@
       street: street.value,
       house: house.value,
       apartment: apartment.value,
+      entrance: entrance.value,
+      floor: floor.value,
+      intercomCode: intercomCode.value,
       workDate: workDate.value,
       workInterval: workInterval.value,
       notes: notes.value
@@ -317,13 +319,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 </div>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    let totalAmountInput = document.getElementById("totalAmount");
-
-    totalAmountInput.addEventListener("input", function() {
-        // Оставляем в поле только цифры, удаляем все остальные символы
-        this.value = this.value.replace(/\D/g, '');
-    });
     document.getElementById('checkButton').addEventListener('click', function() {
         var content = '';
         content += 'Количество ХВС: ' + document.getElementById('hvsQuantity').value + '<br>';
@@ -335,6 +330,9 @@ document.addEventListener("DOMContentLoaded", function() {
         content += 'Улица: ' + document.getElementById('street').value + '<br>';
         content += 'Дом: ' + document.getElementById('house').value + '<br>';
         content += 'Квартира: ' + document.getElementById('apartment').value + '<br>';
+        content += 'Подъезд: ' + document.getElementById('entrance').value + '<br>';
+        content += 'Этаж: ' + document.getElementById('floor').value + '<br>';
+        content += 'Код домофона: ' + document.getElementById('intercomCode').value + '<br>';
         content += 'Дата работы: ' + document.getElementById('workDate').value + '<br>';
         content += 'Интервал работы: ' + document.getElementById('workInterval').value + '<br>';
         content += 'Примечания: ' + document.getElementById('notes').value + '<br>';
