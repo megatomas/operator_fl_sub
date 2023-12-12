@@ -247,13 +247,6 @@
       error.innerText = "Пожалуйста, правильно заполните следующие поля: " + invalidFields.join(", ");
       return;
     }
-    document.addEventListener("DOMContentLoaded", function() {
-    let totalAmountInput = document.getElementById("totalAmount");
-
-    totalAmountInput.addEventListener("input", function() {
-        // Оставляем в поле только цифры, удаляем все остальные символы
-        this.value = this.value.replace(/\D/g, '');
-    });
 });
 
     let data = {
@@ -324,6 +317,13 @@ document.addEventListener("DOMContentLoaded", function() {
 </div>
 </div>
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+    let totalAmountInput = document.getElementById("totalAmount");
+
+    totalAmountInput.addEventListener("input", function() {
+        // Оставляем в поле только цифры, удаляем все остальные символы
+        this.value = this.value.replace(/\D/g, '');
+    });
     document.getElementById('checkButton').addEventListener('click', function() {
         var content = '';
         content += 'Количество ХВС: ' + document.getElementById('hvsQuantity').value + '<br>';
